@@ -1,0 +1,78 @@
+
+\documentclass[pdflatex,sn-mathphys]{sn-jnl}% Math and Physical Sciences Reference Style
+
+
+\jyear{2021}%
+
+
+\begin{document}
+
+\title{Construction Worker's Safety Condition Image Detection}
+\subtitle{CS229 Project Proposal}
+%%=============================================================%%
+%% Prefix	-> \pfx{Dr}
+%% GivenName	-> \fnm{Joergen W.}
+%% Particle	-> \spfx{van der} -> surname prefix
+%% FamilyName	-> \sur{Ploeg}
+%% Suffix	-> \sfx{IV}
+%% NatureName	-> \tanm{Poet Laureate} -> Title after name
+%% Degrees	-> \dgr{MSc, PhD}
+%% \author*[1,2]{\pfx{Dr} \fnm{Joergen W.} \spfx{van der} \sur{Ploeg} \sfx{IV} \tanm{Poet Laureate} 
+%%                 \dgr{MSc, PhD}}\email{iauthor@gmail.com}
+%%=============================================================%%
+
+\author{\fnm{Mingxi} \sur{Zhang}}\email{zmx@stanford.edu}
+
+\author{\fnm{Xiaokun} \sur{Chen}}\email{}
+
+\equalcont{The author contributed equally to this work.}
+
+
+%%\pacs[JEL Classification]{D8, H51}
+
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
+
+\maketitle
+
+\begin{center}
+\textbf{Project Category: Computer Vision}
+\end{center}
+\section{Motivation}\label{sec1}
+
+For our project, we will be focusing on identifying the safety conditions of workers on a construction site by applying computer vision techniques. 
+Safety is one of the most important aspects of the construction process. Typically, a construction manager is responsible for maintaining a safe work environment on site. We would like to use a machine-learning algorithm to identifies whether a worker complies with safety rules using photos from the construction sites. The result can be used to trigger an early warning to the construction manager once a potential risk is identified by the machine and therefore, prevents some accidents from happening.
+
+\section{Method}\label{sec2}
+
+Typical object detection algorithms, including Faster R-CNN, R-FCN, Single Shot Detector, will be considered to detect the objects related to construction site safety requirements. We are planning to use construction site images from MIT Places Dataset\textsuperscript{[1]} for our project, splitting the images into train, test, and validation sub-sets for our model. Since the data set is originally used for place identification, we will need to select images with workers on them and label them with corresponding safety requirements, such as helmets, vests, and gloves, posted by Occupational Safety and Health Administration (OSHA) or other organizations. 
+
+\section{Intended experiments}\label{sec3}
+
+ After training the model with a training set, we will compare the performance of different models using the test set and select the one with the best accuracy. The validation set will then be used to evaluate the accuracy of the model. Another way to evaluate the algorithm is collecting construction site images from the internet and testing the model with these images since a single-sourced data set might be biased. We will also compare the results of our project with existing studies related to construction site safety.
+
+\section{Relevant Researches}\label{sec3}
+
+Other works have been done related to the construction site. For example, a Faster R-CNN method is used in [2] for identifying the personal safety equipment of workers. The model in [2] achieve a accuracy of 70\% in the MIT data set. The author of the paper also mentioned several other works related to image detection of the construction site.
+
+\bibliography{sn-bibliography}% common bib file
+%% if required, the content of .bbl file can be included here once bbl is generated
+%%\input sn-article.bbl
+\begin{enumerate}
+
+\item
+Places: A 10 million Image Database for Scene Recognition
+B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba
+IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017
+
+\hfill
+
+\item
+Image Detection Model for Construction Worker Safety Conditions using Faster R-CNN
+Saudi, Madihah Mohd, Aiman Hakim, Azuan Ahmad, Ahmad Shakir, Mohd Hanafi, Anvar Narzullaev and Mohd Ifwat International Journal of Advanced Computer Science and Applications 11, 2020
+
+\end{enumerate}
+
+%% Default %%
+%%\input sn-sample-bib.tex%
+
+\end{document}
